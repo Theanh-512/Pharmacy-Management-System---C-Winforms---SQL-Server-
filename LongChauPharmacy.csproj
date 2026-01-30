@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F5E1A80-8038-47B9-95E6-3296106BFABE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LongChauPharmacy</RootNamespace>
+    <AssemblyName>LongChauPharmacy</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\UC_AddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UC_AddUser.Designer.cs">
+      <DependentUpon>UC_AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UC_Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UC_Dashboard.Designer.cs">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UC_Register.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UC_Register.Designer.cs">
+      <DependentUpon>UC_Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UC_ReloadPassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UC_ReloadPassword.Designer.cs">
+      <DependentUpon>UC_ReloadPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UC_Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UC_Report.Designer.cs">
+      <DependentUpon>UC_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UC_Revenue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UC_Revenue.Designer.cs">
+      <DependentUpon>UC_Revenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UC_SearchInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UC_SearchInvoice.Designer.cs">
+      <DependentUpon>UC_SearchInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UC_ViewCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UC_ViewCustomer.Designer.cs">
+      <DependentUpon>UC_ViewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UC_ViewUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UC_ViewUser.Designer.cs">
+      <DependentUpon>UC_ViewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs" />
+    <Compile Include="InfoMedic.cs" />
+    <Compile Include="Medic.cs" />
+    <Compile Include="Model1.cs" />
+    <Compile Include="PharmacyDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmacyDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sale.cs" />
+    <Compile Include="SaleDetail.cs" />
+    <Compile Include="UIfrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIfrmAdmin.Designer.cs">
+      <DependentUpon>UIfrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIfrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIfrmLogin.Designer.cs">
+      <DependentUpon>UIfrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UIfrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIfrmUser.Designer.cs">
+      <DependentUpon>UIfrmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\US_AddMedicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\US_AddMedicine.Designer.cs">
+      <DependentUpon>US_AddMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\US_Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\US_Dashboard.Designer.cs">
+      <DependentUpon>US_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\US_MedicInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\US_MedicInfo.Designer.cs">
+      <DependentUpon>US_MedicInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\US_SellMedicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\US_SellMedicine.Designer.cs">
+      <DependentUpon>US_SellMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\US_ViewMedicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\US_ViewMedicine.Designer.cs">
+      <DependentUpon>US_ViewMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\US_ViewSales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\US_ViewSales.Designer.cs">
+      <DependentUpon>US_ViewSales.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\UC_AddUser.resx">
+      <DependentUpon>UC_AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UC_Dashboard.resx">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UC_Register.resx">
+      <DependentUpon>UC_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UC_ReloadPassword.resx">
+      <DependentUpon>UC_ReloadPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UC_Report.resx">
+      <DependentUpon>UC_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UC_Revenue.resx">
+      <DependentUpon>UC_Revenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UC_SearchInvoice.resx">
+      <DependentUpon>UC_SearchInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UC_ViewCustomer.resx">
+      <DependentUpon>UC_ViewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UC_ViewUser.resx">
+      <DependentUpon>UC_ViewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\rpt_MedicineSalesByMonth.rdlc" />
+    <EmbeddedResource Include="Reports\rpt_SalesRevenueByMonth_Detail.rdlc" />
+    <EmbeddedResource Include="Reports\rpt_SalesRevenueByUser.rdlc" />
+    <EmbeddedResource Include="UIfrmAdmin.resx">
+      <DependentUpon>UIfrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIfrmLogin.resx">
+      <DependentUpon>UIfrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIfrmUser.resx">
+      <DependentUpon>UIfrmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\US_AddMedicine.resx">
+      <DependentUpon>US_AddMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\US_Dashboard.resx">
+      <DependentUpon>US_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\US_MedicInfo.resx">
+      <DependentUpon>US_MedicInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\US_SellMedicine.resx">
+      <DependentUpon>US_SellMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\US_ViewMedicine.resx">
+      <DependentUpon>US_ViewMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\US_ViewSales.resx">
+      <DependentUpon>US_ViewSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="PharmacyDBDataSet.xsc">
+      <DependentUpon>PharmacyDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PharmacyDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PharmacyDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PharmacyDBDataSet.xss">
+      <DependentUpon>PharmacyDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\Color\color.txt" />
+    <Content Include="Resource\GIF\adduser.gif" />
+    <Content Include="Resource\GIF\admin.gif" />
+    <Content Include="Resource\GIF\ambulance.gif" />
+    <Content Include="Resource\GIF\healthcare.gif" />
+    <Content Include="Resource\GIF\khachhang.gif" />
+    <Content Include="Resource\GIF\medical.gif" />
+    <Content Include="Resource\GIF\medicine %282%29.gif" />
+    <Content Include="Resource\GIF\medicine 3.gif" />
+    <Content Include="Resource\GIF\medicine.gif" />
+    <Content Include="Resource\GIF\medicinebottle.gif" />
+    <Content Include="Resource\GIF\sale.gif" />
+    <Content Include="Resource\Icon\add %281%29.png" />
+    <Content Include="Resource\Icon\add %282%29.png" />
+    <Content Include="Resource\Icon\add.png" />
+    <Content Include="Resource\Icon\adduser.png" />
+    <Content Include="Resource\Icon\app.png" />
+    <Content Include="Resource\Icon\apps.png" />
+    <Content Include="Resource\Icon\bill %281%29.png" />
+    <Content Include="Resource\Icon\bill.png" />
+    <Content Include="Resource\Icon\bookmark.png" />
+    <Content Include="Resource\Icon\cross %281%29.png" />
+    <Content Include="Resource\Icon\cross-small.png" />
+    <Content Include="Resource\Icon\cross.png" />
+    <Content Include="Resource\Icon\dashboard.png" />
+    <Content Include="Resource\Icon\Exit.png" />
+    <Content Include="Resource\Icon\file-user.png" />
+    <Content Include="Resource\Icon\growth.png" />
+    <Content Include="Resource\Icon\home.png" />
+    <Content Include="Resource\Icon\logout %281%29.png" />
+    <Content Include="Resource\Icon\logout %282%29.png" />
+    <Content Include="Resource\Icon\logout.png" />
+    <Content Include="Resource\Icon\magnifying-glass.png" />
+    <Content Include="Resource\Icon\medical-cross %281%29.png" />
+    <Content Include="Resource\Icon\medicine.png" />
+    <Content Include="Resource\Icon\on-off-button.png" />
+    <Content Include="Resource\Icon\pill.png" />
+    <Content Include="Resource\Icon\pills-bottle %281%29.png" />
+    <Content Include="Resource\Icon\pills-bottle.png" />
+    <Content Include="Resource\Icon\profile.png" />
+    <Content Include="Resource\Icon\refresh.png" />
+    <Content Include="Resource\Icon\report %281%29.png" />
+    <Content Include="Resource\Icon\report.png" />
+    <Content Include="Resource\Icon\rotate-right.png" />
+    <Content Include="Resource\Icon\search-alt.png" />
+    <Content Include="Resource\Icon\search.png" />
+    <Content Include="Resource\Icon\searchwhite.png" />
+    <Content Include="Resource\Icon\time-past.png" />
+    <Content Include="Resource\Icon\trash.png" />
+    <Content Include="Resource\Icon\turn-off.png" />
+    <Content Include="Resource\Icon\user %281%29.png" />
+    <Content Include="Resource\Icon\user.png" />
+    <Content Include="Resource\Picture\backgroundFrmLogin.png" />
+    <Content Include="Resource\Picture\doctor.png" />
+    <Content Include="Resource\Picture\logonew.png" />
+    <Content Include="Resource\Picture\no.png" />
+    <Content Include="Resource\Picture\nurse.png" />
+    <Content Include="Resource\Picture\plusplus pharmacy.png" />
+    <Content Include="Resource\Picture\yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resource\Medicine\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+</Project>
