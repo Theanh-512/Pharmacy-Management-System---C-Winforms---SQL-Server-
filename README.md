@@ -1,7 +1,7 @@
 # Pharmacy-Management-System---C-Winforms---SQL-Server-
 Hệ thống quản lý kho dược ( Đồ án môn Window forms ), bao gồm : báo cáo, slide đồ án, source  
 
-## 🛠 Công nghệ sử dụng
+## Công nghệ sử dụng
 - C# WinForms
 - SQL Server
 - Visual Studio
@@ -22,6 +22,8 @@ Hệ thống quản lý kho dược ( Đồ án môn Window forms ), bao gồm :
 - Quản lý người dùng (Admin / User)
 - Bán hàng
 - Báo cáo – thống kê
+
+## Bố cục
 <img width="353" height="782" alt="Screenshot 2026-01-30 205426" src="https://github.com/user-attachments/assets/d156bf27-2be1-4418-8ad9-0a9153c810de" />
 
 ## Hướng dẫn chạy project
